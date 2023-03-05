@@ -15,7 +15,7 @@ function NavigationBar(){
     useEffect(() => {
         if(showMobileMenu){
             mobileMenu.current.style.height = '235px';
-            mobileMenu.current.style.padding = '48px 24px';
+            mobileMenu.current.style.padding = '48px 24px';               
         }
         else{
             mobileMenu.current.style.height = '';

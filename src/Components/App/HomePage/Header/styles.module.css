@@ -1,0 +1,184 @@
+.header{
+    box-sizing: border-box;
+    margin: auto;
+    background-color: #E7816B;
+    width: 1111px;
+    height: 640px;
+    position: relative;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    transition: width 0.2s linear, padding 0.2s linear;
+    padding: 0px 95px 0px 95px;
+    margin-bottom: 160px;
+}
+
+.backgroundCircle{
+    position: absolute;
+    right: 0px;
+    width: 640px;
+    height: 640px;
+}
+
+.phoneBox{
+    position: relative;
+    width: 350px;
+    height: 300px;
+}
+
+.phone{
+    position: absolute;
+    top: -150px;
+    left: -150px;
+    width: 600px;
+    object-fit: contain;
+    transition: right 0.2s linear;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    width: 720px;
+    gap: 96px;
+}
+
+.flexText{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 540px;
+    gap: 11px;
+}
+
+.title{
+    font-family: var(--font);
+    font-weight: var(--h1-font-weight);
+    font-size: var(--h1-font-size);
+    line-height: var(--h1-line-height);
+    color: white;
+    transition: font-size 0.2s linear, line-height 0.2s linear;
+}
+
+.desc{
+    font-family: var(--font);
+    font-weight: var(--body-font-weight);
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+    color: white;
+    width: 445px;
+    margin-bottom: 29px;
+    transition: margin 0.2s linear;
+}
+
+.learnMoreButton{
+    border: none;
+    border-radius: 8px;
+    width: 152px;
+    height: 56px;
+    background-color: white;
+    font-family: var(--font);
+    font-size: 15px;
+    letter-spacing: 1px;
+    line-height: 21.68px;
+    cursor: pointer;
+    transition: background-color 0.2s linear, color 0.2s linear;
+}
+
+.learnMoreButton:hover{
+    background-color: #FFAD9B;
+    color: white;
+}
+
+@media(max-width: 1200px){
+    .header{
+        width: 90%;
+    }
+    .flex{
+        width: 100%;
+        gap: 40px;
+    }
+}
+
+@media(max-width: 1070px){
+    .title{
+        font-size: 35px; 
+        line-height: 38px;
+    }
+    .desc{
+        width: 100%;
+    }
+}
+
+/* tablet*/
+@media(max-width: 800px){
+    .header{
+        margin-bottom: 120px;
+    }
+    .backgroundCircle{
+        left: 170px;
+    }
+    .header{
+        padding: 60px 58px 0px 58px;
+        min-height: 843px;
+        align-items: flex-start;
+    }
+    .flex{
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .flexText{
+        width: 100%;
+    }
+
+    .phoneBox{
+        align-self: center;
+    }
+    .phone{
+        left: -120px;
+    }
+
+    .title, .desc{
+        text-align: center;
+    }
+    .title{
+        font-size: var(--h1-font-size);
+        line-height: var(--h1-line-height);
+    }
+
+    .desc{
+        font-size: var(--body-font-size);
+        line-height: var(--body-line-height)
+    }
+    .learnMoreButton{
+        align-self: center;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+
+@media(max-width: 500px){
+    .header{
+        width: 100%;
+        border-radius: 0px;
+        padding: 80px 24px 0px 24px
+    }
+    .flex{
+        gap: 80px;
+    }
+
+    .flexText{
+        gap: 14px;
+    }
+    .title{
+        font-size: 32px;
+        line-height: 36px;
+    }
+    .desc{
+        font-size: 15px;
+        line-height: 25px;
+        margin-bottom: 10px;
+    }
+}

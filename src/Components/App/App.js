@@ -10,7 +10,6 @@ function App(){
                 <NavigationBar/>
                 <Routes>
                     <Route path='/' element={<HomePage/>}/>
-                
                 </Routes>
             </BrowserRouter>
         )

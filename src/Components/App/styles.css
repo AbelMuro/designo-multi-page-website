@@ -27,4 +27,9 @@ body, p, h1,h2,h3 {
     --body-font-size: 16px;
     --body-line-height: 26px;
 
+    --closest: 50;
+    --close: 40;
+    --far: 30;
+    --farthest: 20;
+
 }

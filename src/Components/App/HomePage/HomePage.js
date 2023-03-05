@@ -1,10 +1,14 @@
 import React from 'react';
-import styles from './styles.module.css';
+import Header from './Header';
+import DesignPageLinks from './DesignPageLinks';
+import CompanyDetails from './CompanyDetails';
 
 function HomePage(){
     return(
-        <main className={styles.container}>
-            
+        <main>
+            <Header/>
+            <DesignPageLinks/>
+            <CompanyDetails/>
         </main>
     )
 }
