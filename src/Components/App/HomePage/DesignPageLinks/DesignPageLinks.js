@@ -1,12 +1,20 @@
 import React, {memo} from 'react';
 import styles from './styles.module.css';
+import { useNavigate } from 'react-router-dom';
 import images from './images';
 
 function DesignPageLinks() {
+    const navigate = useNavigate();
+
+    const handleClick = (e) => {
+        const route = e.target.getAttribute('data-route');
+        navigate(route);
+    }
+
     return(
         <section className={styles.grid}>
-            <div className={styles.webDesign} >
-                <div className={styles.overlay}>
+            <div className={styles.webDesign}>
+                <div className={styles.overlay} onClick={handleClick} data-route='/webdesign'>
                     <div className={styles.flex}>
                         <h2 className={styles.title}>
                             WEB DESIGN

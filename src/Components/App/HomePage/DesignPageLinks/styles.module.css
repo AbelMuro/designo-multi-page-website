@@ -52,6 +52,7 @@
 }
 
 .flex{
+    pointer-events: none;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -62,6 +63,7 @@
 }
 
 .title{
+    pointer-events: none;
     white-space: nowrap;
     color: white;
     font-family: var(--font);
@@ -73,6 +75,7 @@
 }
 
 .link{
+    pointer-events: none;
     font-family: var(--font);
     color: white;
     font-weight: 500;
