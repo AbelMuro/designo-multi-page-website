@@ -7,6 +7,7 @@ function NavigationBar(){
     const [mobile] = useMediaQuery('(max-width: 600px)');
     const [showMobileMenu, setShowMobileMenu] = useState(false)
     const mobileMenu = useRef();
+    const mobileIcon = useRef();
 
     const handleClick = () => {
         setShowMobileMenu(!showMobileMenu)
@@ -15,13 +16,15 @@ function NavigationBar(){
     useEffect(() => {
         if(showMobileMenu){
             mobileMenu.current.style.height = '235px';
-            mobileMenu.current.style.padding = '48px 24px';               
+            mobileMenu.current.style.padding = '48px 24px';   
+            mobileIcon.current.src = images['close'];            
         }
         else{
             mobileMenu.current.style.height = '';
             mobileMenu.current.style.padding = '';
+            mobileIcon.current.src = images['hamburger'];
         }
-    },[showMobileMenu])
+    }, [showMobileMenu])
 
     useEffect(() => {
         const navLinks = document.querySelector('.' + styles.navLinks);
@@ -32,7 +35,7 @@ function NavigationBar(){
             hamburger.style.display = 'block';
         }
         else {
-            setShowMobileMenu(false);
+            setShowMobileMenu(false);               //this will close the mobile menu when the user resizes to desktop
             navLinks.style.display = '';
             hamburger.style.display = '';
         }
@@ -54,7 +57,7 @@ function NavigationBar(){
                         CONTACT
                     </a>
                 </div>
-                <img src={images['hamburger']} className={styles.hamburger} onClick={handleClick}/>
+                <img src={images['hamburger']} className={styles.hamburger} onClick={handleClick} ref={mobileIcon}/>
             </nav>                
              <div className={styles.mobileMenu} ref={mobileMenu}>
                 <a className={styles.mobileLink}>

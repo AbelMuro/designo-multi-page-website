@@ -5,7 +5,7 @@ import images from './images';
 function Header() {
     return(
         <header className={styles.header}>
-            <img src={images['headerBG']} className={styles.backgroundCircle}/>
+            <img src={images['headerBG']} className={styles.backgroundCircle} alt="phone"/>
 
             <section className={styles.flex}>
                 <div className={styles.flexText}>

@@ -8,10 +8,10 @@
     z-index: var(--close);
     border-radius: 15px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     overflow: hidden;
     transition: width 0.2s linear, padding 0.2s linear;
-    padding: 0px 95px 0px 95px;
+    padding: 145px 95px 0px 95px;
     margin-bottom: 160px;
 }
 
