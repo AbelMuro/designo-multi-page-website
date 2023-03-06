@@ -8,8 +8,8 @@
     align-items: center;
     background-image: url('./images/bg-pattern-call-to-action.svg');
     background-repeat: no-repeat;
-    margin: 0px auto 260px auto;            /* change 260 to 160*/
-    transition: width 0.2s linear, background-position 0.2s linear, height 0.2s linear;
+    margin: 0px auto 160px auto;            /* change 260 to 160*/
+    transition: width 0.2s linear, background-position 0.2s linear, height 0.2s linear, margin 0.2s linear;
 }
 
 .flex{
@@ -45,12 +45,19 @@
     }
 }
 
+@media(max-width: 800px){
+    .cotnainer{
+        margin-bottom: 120px;
+    }
+}
+
 
 @media(max-width: 500px){
     .container{
         width: 100%;
         border-radius: 0px;
-        height: 320px
+        height: 320px;
+        margin-bottom: 96px;
     }
     .title{
         font-size: 32px;
