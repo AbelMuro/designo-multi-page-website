@@ -1,10 +1,8 @@
-import React from 'react';
+import React, {memo} from 'react';
 import styles from './styles.module.css';
 import images from './images';
 
 function DesignPageLinks() {
-
-
     return(
         <section className={styles.grid}>
             <div className={styles.webDesign} >
@@ -19,7 +17,6 @@ function DesignPageLinks() {
                         </p>
                     </div>                    
                 </div>
-
             </div>
             <div className={styles.appDesign} >
                 <div className={styles.overlay}>
@@ -33,7 +30,6 @@ function DesignPageLinks() {
                         </p>
                     </div>
                 </div>
-
             </div>
             <div className={styles.graphicDesign} >
                 <div className={styles.overlay}>
@@ -52,4 +48,4 @@ function DesignPageLinks() {
     )
 }
 
-export default DesignPageLinks;
+export default memo(DesignPageLinks);

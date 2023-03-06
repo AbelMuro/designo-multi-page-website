@@ -5,6 +5,7 @@
     width: 1111px;
     height: 640px;
     position: relative;
+    z-index: var(--close);
     border-radius: 15px;
     display: flex;
     align-items: center;

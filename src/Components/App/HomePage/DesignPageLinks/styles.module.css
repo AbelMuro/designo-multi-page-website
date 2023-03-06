@@ -6,6 +6,8 @@
     gap: 30px;
     margin: 0px auto 160px auto;
     transition: width 0.2s linear, grid-template-rows 0.2s linear, margin 0.2s linear;
+    position: relative;
+    z-index: var(--close);
 }
 
 .rightArrow{
@@ -39,8 +41,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-clip: border-box;
+    background-color: rgba(15, 14, 14, 0.7);
     border-radius: 15px;
+    transition: background-color 0.2s linear;
 }
 
 

@@ -1,0 +1,17 @@
+.bgLeafOne, .bgLeafTwo{
+    position: absolute;   
+    width: 1006px;
+    height: 594px;
+    z-index: var(--farthest);
+}
+
+.bgLeafOne{
+    top: 475px;
+    left: 0px;
+}
+
+.bgLeafTwo{
+    top: 1879px;
+    right: 0px;
+    transform: rotate(180deg);
+}

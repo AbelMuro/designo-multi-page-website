@@ -1,0 +1,130 @@
+.flexContainer{
+    margin: 0px auto 380px auto;
+    width: 1110px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    transition: width 0.2s linear;
+    position: relative;
+    z-index: var(--close);
+}
+
+.item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 350px;
+    min-height: 412px;
+}
+
+.companyDesc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.imageContainer{
+    width: 202px;
+    height: 202px;
+    position: relative;
+}
+
+.image, .circle{
+    position: absolute;
+}
+
+#circleTwo{
+    transform: rotate(-90deg);
+}
+
+#circleThree{
+    transform: rotate(90deg);
+}
+
+.image{
+    z-index: var(--close);
+    width: 100%;
+    object-fit: contain;
+}
+
+.circle{
+    z-index: var(--far);
+    width: 100%;
+    object-fit: contain;
+
+}
+
+.title{
+    font-family: var(--font);
+    font-size: var(--h3-font-size);
+    font-weight: var(--h3-font-weight);
+    line-height: var(--h3-line-height);
+    letter-spacing: var(--h3-letter-spacing);
+}
+
+.desc{
+    text-align: center;
+    font-family: var(--font);
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+    font-weight: var(--body-font-weight);
+}
+
+@media(max-width: 1200px){
+    .flexContainer{
+        width: 90%;
+    }
+    .desc{
+        height: 104px;
+    }
+}
+
+
+/* tablet*/
+@media(max-width: 800px){
+
+    .flexContainer{
+        align-items: center;
+        flex-direction: column;
+        gap: 32px;
+        margin-bottom: 331px;
+    }
+    .item{
+        width: 100%;
+        flex-direction: row;
+        min-height: 202px;
+        gap: 48px;
+        align-items: center;
+    }
+
+    .companyDesc{
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .desc{
+        text-align: initial;
+    }
+    
+    .imageContainer{
+        margin: 0px;
+    }
+}
+
+@media(max-width: 520px){
+    .flexContainer{
+        margin-bottom: 311px;
+    }
+    .item{
+        flex-direction: column;
+    }
+    .desc{
+        text-align: center;
+    }
+
+    .title{
+        align-self: center;
+    }
+}

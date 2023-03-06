@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import styles from './styles.module.css';
 import images from './images';
 
@@ -31,4 +31,4 @@ function Header() {
     )
 }
 
-export default Header;
+export default memo(Header);

@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import useMediaQuery from './useMediaQuery';
+import useMediaQuery from '../ReusableComponents/useMediaQuery';
 import styles from './styles.module.css';
 import images from './images';
 
