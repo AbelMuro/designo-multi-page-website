@@ -4,6 +4,7 @@ import PageDetails from '../ReusableComponents/PageDetails';
 import PageLinks from '../ReusableComponents/PageLinks';
 import images from './images';
 
+/* dont forget to set the leaf images for the background*/
 function AppDesignPage() {
     return(
         <main>
