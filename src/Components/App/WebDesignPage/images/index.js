@@ -4,6 +4,8 @@ import camp from './image-camp.jpg';
 import express from './image-express.jpg';
 import photon from './image-photon.jpg';
 import transfer from './image-transfer.jpg';
+import appDesign from './image-app-design.jpg';
+import graphicDesign from './image-graphic-design.jpg';
 
 export default {
     blogr: blogr,
@@ -12,4 +14,6 @@ export default {
     express: express,
     photon: photon,
     transfer: transfer,
+    appDesign: appDesign,
+    graphicDesign: graphicDesign,
 }

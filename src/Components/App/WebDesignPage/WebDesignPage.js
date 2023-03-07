@@ -1,12 +1,12 @@
 import React from 'react';
 import WebPageHeader from '../ReusableComponents/WebPageHeader';
 import PageDetails from '../ReusableComponents/PageDetails';
-import styles from './styles.module.css';
+import PageLinks from '../ReusableComponents/PageLinks';
 import images from './images';
 
 function WebDesignPage() {
     return(
-        <section>
+        <main>
             <WebPageHeader title='Web Design' desc='We build websites that serve as powerful marketing tools and bring memorable brand experiences.' bgPosition='center right'/>
             <PageDetails details={[
                 {image: images['express'], title: 'EXPRESS', desc: 'A multi-carrier shipping website for ecommerce businesses' },
@@ -16,7 +16,11 @@ function WebDesignPage() {
                 {image: images['blogr'], title: 'BLOGR', desc: 'Blogr is a platform for creating an online blog or publication'},
                 {image: images['camp'], title: 'CAMP', desc: 'Get expert training in coding, data, design, and digital marketing'}
             ]}/>
-        </section>
+            <PageLinks pageLinks={[
+                {bgImage: images['appDesign'], title: 'APP DESIGN', route: '/appdesign'},
+                {bgImage: images['graphicDesign'], title: 'GRAPHIC DESIGN', route: '/graphicdesign'}
+            ]}/>
+        </main>
     )
 }
 

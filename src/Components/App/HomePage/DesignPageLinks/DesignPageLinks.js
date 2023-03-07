@@ -27,7 +27,7 @@ function DesignPageLinks() {
                 </div>
             </div>
             <div className={styles.appDesign} >
-                <div className={styles.overlay}>
+                <div className={styles.overlay} onClick={handleClick} data-route='/appdesign'>
                     <div className={styles.flex}>
                         <h2 className={styles.title}>
                             APP DESIGN
@@ -40,7 +40,7 @@ function DesignPageLinks() {
                 </div>
             </div>
             <div className={styles.graphicDesign} >
-                <div className={styles.overlay}>
+                <div className={styles.overlay} onClick={handleClick} data-route='/graphicdesign'>
                     <div className={styles.flex}>
                         <h2 className={styles.title}>
                             GRAPHIC DESIGN
