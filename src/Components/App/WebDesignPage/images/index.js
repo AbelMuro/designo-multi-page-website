@@ -6,6 +6,7 @@ import photon from './image-photon.jpg';
 import transfer from './image-transfer.jpg';
 import appDesign from './image-app-design.jpg';
 import graphicDesign from './image-graphic-design.jpg';
+import bgLeaf from './bg-pattern-leaf.svg';
 
 export default {
     blogr: blogr,
@@ -16,4 +17,5 @@ export default {
     transfer: transfer,
     appDesign: appDesign,
     graphicDesign: graphicDesign,
+    bgLeaf: bgLeaf,
 }

@@ -1,4 +1,6 @@
 .container{
+    position: relative;
+    z-index: var(--close);
     width: 1111px;
     height: 252px;
     background-color: #E7816B;

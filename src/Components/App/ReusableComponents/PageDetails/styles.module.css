@@ -1,4 +1,6 @@
 .grid{
+    position: relative;
+    z-index: var(--close);
     display: grid;
     grid-template-columns: repeat(3, auto);
     gap: 32px;

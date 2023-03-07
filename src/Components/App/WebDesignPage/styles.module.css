@@ -1,0 +1,21 @@
+.container{
+    width: 1440px;
+    margin: auto;
+    left: 0px;
+    right: 0px;
+    position: absolute;
+    top: 281px;
+    opacity: 1;
+    transition: opacity 0.5s linear;
+}
+
+.leafbackground{
+    width: 1006px;
+    height: 594px;
+}   
+
+@media(max-width: 1440px){
+    .container{
+        width:  100%;
+    }
+}

@@ -1,13 +1,27 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import WebPageHeader from '../ReusableComponents/WebPageHeader';
 import PageDetails from '../ReusableComponents/PageDetails';
 import PageLinks from '../ReusableComponents/PageLinks';
+import useMediaQuery from '../ReusableComponents/useMediaQuery';
 import images from './images';
+import styles from './styles.module.css';
 
-/* dont forget to set the leaf images for the background*/
 function WebDesignPage() {
+    const [tablet] = useMediaQuery('(max-width: 800px)');
+
+    const bgLeafRef = useCallback((ref) => {
+        if(!ref) 
+            return;
+        else
+            ref.style.opacity = tablet ? '0' : '';
+    }, [tablet])
+
     return(
         <main>
+            <div className={styles.container} ref={bgLeafRef}>
+                <img src={images['bgLeaf']} className={styles.leafbackground}/>
+            </div>
+            
             <WebPageHeader title='Web Design' desc='We build websites that serve as powerful marketing tools and bring memorable brand experiences.' bgPosition='center right'/>
             <PageDetails details={[
                 {image: images['express'], title: 'EXPRESS', desc: 'A multi-carrier shipping website for ecommerce businesses' },

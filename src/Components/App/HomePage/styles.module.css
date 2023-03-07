@@ -1,17 +1,38 @@
-.bgLeafOne, .bgLeafTwo{
-    position: absolute;   
-    width: 1006px;
-    height: 594px;
+.containerOne, .containerTwo{
+    position: absolute; 
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 1;
+    transition: opacity 0.5s linear;
+}
+
+
+.containerOne{      
+    width: 1440px;
+    top: 475px;
     z-index: var(--farthest);
 }
 
-.bgLeafOne{
-    top: 475px;
-    left: 0px;
+.containerTwo{
+    width: 1440px;
+    top: 1879px;
+    z-index: var(--farthest);
+}
+
+.bgLeafOne, .bgLeafTwo{
+    width: 1006px;
+    height: 594px;
 }
 
 .bgLeafTwo{
-    top: 1879px;
+    position: absolute;
     right: 0px;
     transform: rotate(180deg);
+}
+
+@media(max-width: 1440px){
+    .containerOne, .containerTwo{
+        width: 100%;
+    }
 }
