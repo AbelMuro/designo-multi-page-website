@@ -7,7 +7,6 @@ import images from './images';
 import styles from './styles.module.css';
 
 
-/* i will need to import the header background image in the images folder and then import it here*/
 function WebDesignPage() {
     const [tablet] = useMediaQuery('(max-width: 800px)');
 
@@ -24,7 +23,12 @@ function WebDesignPage() {
                 <img src={images['bgLeaf']} className={styles.leafbackground}/>
             </div>
             
-            <WebPageHeader title='Web Design' desc='We build websites that serve as powerful marketing tools and bring memorable brand experiences.' bgPosition='center right'/>
+            <WebPageHeader 
+                title='Web Design' 
+                desc='We build websites that serve as powerful marketing tools and bring memorable brand experiences.' 
+                bgImage={images['bgHeader']}
+                bgPosition='center right'
+                />
             <PageDetails details={[
                 {image: images['express'], title: 'EXPRESS', desc: 'A multi-carrier shipping website for ecommerce businesses' },
                 {image: images['transfer'], title: 'TRANSFER', desc: 'Site for low-cost money transfers and sending money within seconds'},

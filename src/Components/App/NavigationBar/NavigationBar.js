@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useState, useCallback} from 'react';
 import useMediaQuery from '../ReusableComponents/useMediaQuery';
 import styles from './styles.module.css';
 import images from './images';
@@ -6,47 +6,47 @@ import images from './images';
 function NavigationBar(){
     const [mobile] = useMediaQuery('(max-width: 600px)');
     const [showMobileMenu, setShowMobileMenu] = useState(false)
-    const mobileMenu = useRef();
-    const mobileIcon = useRef();
 
     const handleClick = () => {
         setShowMobileMenu(!showMobileMenu)
     }
 
-    useEffect(() => {
-        if(showMobileMenu){
-            mobileMenu.current.style.height = '235px';
-            mobileMenu.current.style.padding = '48px 24px';   
-            mobileIcon.current.src = images['close'];            
-        }
+    const mobileMenuRef = useCallback((ref) => {
+        if(!ref)
+            return;
         else{
-            mobileMenu.current.style.height = '';
-            mobileMenu.current.style.padding = '';
-            mobileIcon.current.src = images['hamburger'];
+            ref.style.height = showMobileMenu ? '235px' : '';
+            ref.style.padding = showMobileMenu ? '48px 24px' : '';   
         }
     }, [showMobileMenu])
 
-    useEffect(() => {
-        const navLinks = document.querySelector('.' + styles.navLinks);
-        const hamburger = document.querySelector('.' + styles.hamburger);
+    const mobileMenuIconRef = useCallback((ref) => {
+        if(!ref)
+            return;
 
-        if(mobile){
-            navLinks.style.display = 'none';
-            hamburger.style.display = 'block';
-        }
-        else {
-            setShowMobileMenu(false);               //this will close the mobile menu when the user resizes to desktop
-            navLinks.style.display = '';
-            hamburger.style.display = '';
-        }
+        ref.style.display = mobile ? 'block' : '';
+        ref.src = showMobileMenu ? images['close'] : images['hamburger'];
+    }, [showMobileMenu, mobile])
 
+
+    const navLinksRef = useCallback((ref) => {
+        if(!ref)
+            return;
+        else
+            ref.style.display = mobile ? 'none' : '';
     }, [mobile])
+
+    /* this useEffect will close the mobile menu when the user resizes the viewport past mobile */
+    useEffect(() => {
+        if(showMobileMenu && !mobile)
+            setShowMobileMenu(!showMobileMenu);
+    }, [showMobileMenu, mobile])
 
     return(
         <>
             <nav className={styles.navBar}>
                 <img src={images['companyLogo']} className={styles.logo}/>
-                <div className={styles.navLinks}>
+                <div className={styles.navLinks} ref={navLinksRef}>
                     <a className={styles.link}>
                         OUR COMPANY
                     </a>                
@@ -57,9 +57,9 @@ function NavigationBar(){
                         CONTACT
                     </a>
                 </div>
-                <img src={images['hamburger']} className={styles.hamburger} onClick={handleClick} ref={mobileIcon}/>
+                <img src={images['hamburger']} className={styles.hamburger} onClick={handleClick} ref={(ref) => mobileMenuIconRef(ref)}/>
             </nav>                
-             <div className={styles.mobileMenu} ref={mobileMenu}>
+             <div className={styles.mobileMenu} ref={mobileMenuRef }>
                 <a className={styles.mobileLink}>
                     OUR COMPANY
                 </a>

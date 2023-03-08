@@ -1,4 +1,5 @@
 import React from 'react';
+import WebPageHeader from '../ReusableComponents/WebPageHeader';
 import PageDetails from './../ReusableComponents/PageDetails';
 import PageLinks from './../ReusableComponents/PageLinks'
 import images from './images';
@@ -8,9 +9,9 @@ function GraphicDesignPage() {
     return(
         <main>
             <WebPageHeader 
-                title='Web Design' 
-                desc='We build websites that serve as powerful marketing tools and bring memorable brand experiences.'
-                bgImage={images['leafBG']}
+                title='GRAPHIC DESIGN' 
+                desc='We deliver eye-catching branding materials that are tailored to meet your business objectives.'
+                bgImage={images['headerBG']}
                 bgPosition='center left'
                 />
             <PageDetails details={[
@@ -20,7 +21,7 @@ function GraphicDesignPage() {
             ]}/>
             <PageLinks pageLinks={[
                 {bgImage: images['appDesign'], title: 'APP DESIGN', route: '/appdesign'},
-                {bgImage: images['appDesign'], title: 'APP DESIGN', route: '/webdesign'}
+                {bgImage: images['webDesign'], title: 'WEB DESIGN', route: '/webdesign'}
             ]}/>
         </main>
     )
