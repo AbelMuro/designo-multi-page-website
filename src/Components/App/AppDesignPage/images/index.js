@@ -5,6 +5,8 @@ import loopstudios from './image-loopstudios.jpg';
 import todo from './image-todo.jpg';
 import graphicDesign from './image-graphic-design.jpg';
 import webDesign from './image-web-design.jpg';
+import bgLeaf from './bg-pattern-leaf.svg';
+import bgHeader from './bg-pattern-intro-app.svg';
 
 export default {
     airfilter: airfilter,
@@ -14,4 +16,6 @@ export default {
     todo: todo,
     graphicDesign: graphicDesign,
     webDesign: webDesign,
+    bgLeaf: bgLeaf,
+    bgHeader: bgHeader,
 }

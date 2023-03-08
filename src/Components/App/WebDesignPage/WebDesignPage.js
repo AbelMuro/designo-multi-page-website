@@ -6,6 +6,8 @@ import useMediaQuery from '../ReusableComponents/useMediaQuery';
 import images from './images';
 import styles from './styles.module.css';
 
+
+/* i will need to import the header background image in the images folder and then import it here*/
 function WebDesignPage() {
     const [tablet] = useMediaQuery('(max-width: 800px)');
 

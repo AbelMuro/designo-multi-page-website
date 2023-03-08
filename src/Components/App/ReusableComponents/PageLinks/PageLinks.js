@@ -9,14 +9,12 @@ import {v4 as uuid} from 'uuid'
 function PageLinks({pageLinks}){
     const navigate = useNavigate();
 
-
     const handleClick = (e) => {
         const route = e.target.getAttribute('data-route');
         window.scrollTo(0,0);
         navigate(route);
     };
     
-
     return(
         <section className={styles.container}>
           {pageLinks.map((link) =>{
