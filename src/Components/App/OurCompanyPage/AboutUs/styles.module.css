@@ -3,7 +3,7 @@
     padding-left: 95px;
     width: 1110px;
     height: 480px;
-    margin: 0px auto 360px auto;
+    margin: 0px auto 160px auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,7 +12,7 @@
     background-image: url('./images/bg-pattern-hero-about-desktop.svg');
     background-repeat: no-repeat;
     background-position: left bottom;
-    transition: width 0.2s linear, padding 0.2s linear, height 0.2s linear, border-radius 0.2s linear, background-position 0.2s linear;
+    transition: width 0.2s linear, padding 0.2s linear, height 0.2s linear, border-radius 0.2s linear, background-position 0.2s linear, margin 0.2s linear;
 }
 
 .flex{
@@ -79,6 +79,7 @@
         padding: 0px 0px 64px 0px;
         height: 632px;
         background-position: -100px -100px;
+        margin-bottom: 120px;
     }
     .image{
         width: 100%;
@@ -111,11 +112,23 @@
         height: 715px;
         border-radius: 0px;
         background-position: -150px 170px;
+        padding-bottom: 80px;
+        margin-bottom: 0px;
     }
     .flex{
         height: auto;
     }
     .image{
         border-radius: 0px;
+    }
+
+    .title{
+        font-size: 32px;
+        line-height: 36px;
+    }
+
+    .desc{
+        font-size: 15px;
+        line-height: 25px;
     }
 }
