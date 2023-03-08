@@ -1,11 +1,17 @@
 import React from 'react';
+import {useNavigate} from 'react-router-dom';
 import useMediaQuery from './../ReusableComponents/useMediaQuery';
 import styles from './styles.module.css';
 import logo from './images/logo-light.png';
 
 function Footer() {
     const [tablet] = useMediaQuery('(max-width: 690px)');
+    const navigate = useNavigate();
 
+    const handleNavLink = (e) => {
+        const route = e.target.getAttribute('data-route');
+        navigate(route);
+    }
 
     return(
         <footer className={styles.container}>
@@ -32,13 +38,13 @@ function Footer() {
                     <img src={logo} className={styles.companyLogo}/>
                     {tablet ? <hr className={styles.line}/> : <></>}
                     <div className={styles.links}>
-                        <a className={styles.link}>
+                        <a className={styles.link} onClick={handleNavLink} data-route='/ourcompany'>
                             OUR COMPANY
                         </a>
-                        <a className={styles.link}>
+                        <a className={styles.link} onClick={handleNavLink} data-route='/locations'>
                             LOCATIONS
                         </a>
-                        <a className={styles.link}>
+                        <a className={styles.link} onClick={handleNavLink} data-route='/contact'>
                             CONTACT
                         </a>
                     </div>

@@ -1,7 +1,7 @@
 .navBar{
     width: 1111px;
-    height: 27px;
-    margin: 64px auto 64px auto;
+    height: 155px;
+    margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -93,7 +93,6 @@
 @media(max-width: 600px){
     .navBar{
         height: 96px;
-        margin: 0px auto 0px auto;
     }
     .mobileMenu{
         top: 90px;
