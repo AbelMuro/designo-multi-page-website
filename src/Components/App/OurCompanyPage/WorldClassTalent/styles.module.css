@@ -21,7 +21,7 @@
 .image{
     width: 476px;
     height: 640px;
-    transition: width 0.2s linear;
+    transition: width 0.2s linear, height 0.2s linear;
 }
 
 .flex{
@@ -78,5 +78,29 @@
 }
 
 @media(max-width: 800px){
-    
+    .container{
+        flex-direction: column;
+        height: auto;
+        padding: 0px 0px 68px 0px;
+
+    }
+    .image{
+        content: url('./images/image-world-class-talent-tablet.jpg');
+        width: 100%;
+        height: 320px;
+    }
+
+    .flex{
+        width: 80%;
+        height: auto;
+    }
+
+    .title{
+        text-align: center;
+        font-size: 40px;
+    }
+    .desc{
+        text-align: center;
+        font-size: 16px;
+    }
 }
