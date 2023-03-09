@@ -1,31 +1,40 @@
-import React from 'react';
+import React, {useCallback} from 'react';
+import useMediaQuery from './../../ReusableComponents/useMediaQuery';
 import styles from './styles.module.css';
 
-function Canada() {
-    
+function Location({title, addressTitle, address, contactInfo, rowReverse}) {
+    const [tablet] = useMediaQuery('(max-width: 800px)');
+
+    const containerRef = useCallback((ref) => {
+        if(!ref)
+            return;
+
+        else  
+            ref.style.flexDirection = rowReverse ? 'row-revese' : '';
+            
+    }, [])
+
     return(
-        <section className={styles.container}>
+        <section className={styles.container} ref={containerRef}>
 
             <div className={styles.pinkBox}>
 
                 <div className={styles.content}>
                     <h2 className={styles.title}>
-                        Canada
+                        {title}
                     </h2>
                     <div className={styles.addresses}>
                         <p className={styles.address}>
                             <span className={styles.addressTitle}>
-                                Designo Central Office<br/>
+                                {addressTitle}<br/>
                             </span>
-                            3886 Wellington Street <br/>
-                            Toronto, Ontario M9C 3J5
+                            {address}
                         </p>  
                         <p className={styles.address}>
                             <span className={styles.addressTitle}>
                                 Contact <br/>
                             </span>
-                            P : +1 253-863-8967<br/>
-                            M : contact@designo.co
+                            {contactInfo}
                         </p>                  
                     </div>               
                  </div>
@@ -35,4 +44,4 @@ function Canada() {
     )
 }
 
-export default Canada;
+export default Location;
