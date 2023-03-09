@@ -1,0 +1,36 @@
+.container{
+    width: 1110px;
+    height: 326px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0px auto 360px auto;
+}
+
+.content{
+    width: 730px;
+    height: 326px;
+    background-color: #FDF3F0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.flex{
+    width: 540px;
+    display: flex;
+    gap: 24px;
+    flex-direction: column;   
+}
+
+.addresses{
+    width: 462px;
+    display: flex;
+    justify-content: space-between;
+    gap: 103px;
+}
+
+.address{
+    width: 182px;
+    height: 78px;
+}

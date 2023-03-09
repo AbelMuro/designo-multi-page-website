@@ -1,0 +1,96 @@
+.container{
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    width: 1110px;
+    margin: 0px auto 160px auto;
+    transition: width 0.2s linear, margin 0.2s linear;
+    position: relative;
+    z-index: var(--close);
+}
+
+.location{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 350px;
+    height: 364px;
+}
+
+.imageContainer{
+    position: relative;
+    z-index: var(--close);
+    width: 202px;
+    height: 202px;
+}   
+
+.circleImage{
+    z-index: var(--far);
+    position: absolute;
+    width: 202px;
+    height: 202px;
+}
+
+#firstCircle{
+    transform: rotate(90deg);
+}
+#thirdCircle{
+    transform: rotate(-90deg);
+}
+
+.locationImage{
+    width: 100%;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.title{
+    font-family: var(--font);
+    font-size: var(--h3-font-size);
+    font-weight: var(--h3-font-weight);
+    letter-spacing: var(--h3-letter-spacing);
+    color: #333136;
+    white-space: nowrap;
+}
+
+.locationButton{
+    width: 152px;
+    height: 56px;
+    background-color: #E7816B;
+    color: white;
+    border: none;
+    font-family: var(--font);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 21.68px;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s linear;
+}
+
+.locationButton:hover{
+    background-color: #FFAD9B;
+}
+
+@media(max-width: 1200px){
+    .container{
+        width: 90%;
+    }
+}
+
+@media(max-width: 800px){
+    .container{
+        flex-direction: column;
+        margin-bottom: 120px;
+        gap: 80px;
+    }
+    .location{
+        width: 100%;
+    }
+}

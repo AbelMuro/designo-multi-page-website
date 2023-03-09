@@ -13,6 +13,8 @@
     background-repeat: no-repeat;
     background-position: left bottom;
     transition: width 0.2s linear, padding 0.2s linear, height 0.2s linear, border-radius 0.2s linear, background-position 0.2s linear, margin 0.2s linear;
+    position: relative;
+    z-index: var(--close);
 }
 
 .flex{

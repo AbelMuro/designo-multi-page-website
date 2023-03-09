@@ -1,54 +1,51 @@
 .container{
-    box-sizing: border-box;
+    margin: 0px auto 380px auto;
+    border-radius: 15px;
+    width: 1110px;
+    height: 640px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 94px;
-    width: 1111px;
-    height: 640px;
-    border-radius: 15px;
     background-color: #FDF3F0;
-    background-image: url('./images/bg-pattern-three-circles.svg');
-    background-repeat: no-repeat;
-    background-position: bottom center;
-    padding-right: 96px;
+    box-sizing: border-box;
+    padding-left: 95px;
+    transition: width 0.2s linear, padding 0.2s linear, margin 0.2s linear, height 0.2s linear, background-position 0.2s linear, gap 0.2s linear;
     overflow: hidden;
-    margin: 0px auto 160px auto;
-    transition: width 0.2s linear, padding 0.2s linear, gap 0.2s linear, border-radius 0.2s linear, margin 0.2s linear;
+    background-image: url('./images/bg-pattern-two-circles.svg');
+    background-repeat: no-repeat;
+    background-position: bottom left;
     position: relative;
     z-index: var(--close);
 }
 
-
 .image{
+    content: url('./images/image-real-deal.jpg');
     width: 476px;
     height: 640px;
     transition: width 0.2s linear, height 0.2s linear;
 }
-
 .flex{
-    width: 445px;
-    height: 332px;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     gap: 24px;
-    flex-direction: column;;
-    justify-content: space-between;  
-    transition: width 0.2s linear;
+    width: 445px;
 }
 
 .title{
     font-family: var(--font);
     font-size: var(--h2-font-size);
-    font-weight: var(--h2-font-weight);
     line-height: var(--h2-line-height);
+    font-weight: var(--h2-font-weight);
     color: #E7816B;
     transition: font-size 0.2s linear;
 }
 
 .desc{
     font-family: var(--font);
-    font-weight: var(--body-font-weight);
     font-size: var(--body-font-size);
+    font-weight: var(--body-font-weight);
     line-height: var(--body-line-height);
     color: #333136;
     transition: font-size 0.2s linear;
@@ -57,11 +54,8 @@
 @media(max-width: 1200px){
     .container{
         width: 90%;
+        padding-left: 40px;
         gap: 40px;
-        padding-right: 40px;
-    }
-    .flex{
-        width: 50%;
         height: auto;
     }
     .image{
@@ -70,61 +64,50 @@
     }
 }
 
-@media(max-width: 1000px){
-    .title{
-        font-size: 35px;
-    }
-    .desc{
-        font-size: 14px;
-    }
-}
-
 @media(max-width: 800px){
     .container{
-        flex-direction: column;
-        height: auto;
-        padding: 0px 0px 68px 0px;
-        margin-bottom: 120px;
-
+        flex-direction: column-reverse;
+        padding: 0px 0px 94px 0px;
+        margin-bottom: 384px;
+        background-image: url('./images/bg-pattern-three-circles.svg');
+        background-position: 70px 100px;
     }
     .image{
-        content: url('./images/image-world-class-talent-tablet.jpg');
         width: 100%;
         height: 320px;
+        content: url('./images/image-real-deal-tablet.jpg');
     }
 
     .flex{
         width: 80%;
-        height: auto;
     }
 
-    .title{
+    .title, .desc{
         text-align: center;
-        font-size: 40px;
-    }
-    .desc{
-        text-align: center;
-        font-size: 16px;
     }
 }
 
 @media(max-width: 500px){
     .container{
+        justify-content: flex-end;
         width: 100%;
         border-radius: 0px;
+        height: 865px;
+        background-position: left bottom;
+        margin-bottom: 310px;
         gap: 80px;
     }
+
     .image{
-        content: url('./images/image-world-class-talent-mobile.jpg');
+        content: url('./images/image-real-deal-mobile.jpg');
     }
 
     .title{
         font-size: 32px;
         line-height: 36px;
     }
+
     .desc{
         font-size: 15px;
-        line-height: 25px;
     }
-
 }

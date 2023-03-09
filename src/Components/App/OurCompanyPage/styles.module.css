@@ -1,0 +1,28 @@
+.leafContainerOne, .leafContainerTwo{
+    width: 1440px;     
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: var(--farthest);
+}
+
+.leafContainerOne{
+    top: 475px;
+}
+
+.leafContainerTwo{
+    top: 1777px;
+    height: 594px;
+    overflow: hidden;
+}
+
+.leafOne, .leafTwo{
+    width: 1006px;
+    height: 594px;
+}
+
+.leafTwo{
+    position: absolute;
+    right: -400px;
+}

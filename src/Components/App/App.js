@@ -5,6 +5,7 @@ import WebDesignPage from './WebDesignPage';
 import AppDesignPage from './AppDesignPage';
 import GraphicDesignPage from './GraphicDesignPage'
 import OurCompanyPage from './OurCompanyPage';
+import LocationsPage from './LocationsPage';
 import Footer from './Footer';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import './styles.css';
@@ -20,6 +21,7 @@ function App(){
                     <Route path='/appdesign' element={<AppDesignPage/>}/>
                     <Route path='/graphicdesign' element={<GraphicDesignPage/>}/>
                     <Route path='/ourcompany' element={<OurCompanyPage/>}/>
+                    <Route path='/locations' element={<LocationsPage/>}/>
                 </Routes>
                 <Footer/>
             </BrowserRouter>
