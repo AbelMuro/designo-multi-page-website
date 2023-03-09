@@ -1,15 +1,14 @@
 import React from 'react';
 import styles from './styles.module.css';
 
-
-/* this is where i left off, i will need to style .addressTitle and .address below*/
 function Canada() {
+    
     return(
         <section className={styles.container}>
 
-            <div className={styles.content}>
+            <div className={styles.pinkBox}>
 
-                <div className={styles.flex}>
+                <div className={styles.content}>
                     <h2 className={styles.title}>
                         Canada
                     </h2>
@@ -30,9 +29,8 @@ function Canada() {
                         </p>                  
                     </div>               
                  </div>
-
             </div>
-
+            <img className={styles.map}/>                
         </section>
     )
 }

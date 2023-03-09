@@ -1,12 +1,14 @@
 .container{
     width: 1110px;
     height: 326px;
+    gap: 30px;
     display: flex;
     justify-content: space-between;
-    margin: 0px auto 360px auto;
+    margin: 0px auto 29px auto;
+    transition: width 0.2s linear, gap 0.2s linear, margin 0.2s linear;
 }
 
-.content{
+.pinkBox{
     width: 730px;
     height: 326px;
     background-color: #FDF3F0;
@@ -14,9 +16,13 @@
     justify-content: center;
     align-items: center;
     border-radius: 15px;
+    background-image: url('./images/bg-pattern-two-circles.svg');
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    transition: width 0.2s linear, border-radius 0.2s linear, background-position 0.2s linear;
 }
 
-.flex{
+.content{
     width: 540px;
     display: flex;
     gap: 24px;
@@ -28,9 +34,121 @@
     display: flex;
     justify-content: space-between;
     gap: 103px;
+    transition: width 0.2s linear, gap 0.2s linear;
 }
 
 .address{
     width: 182px;
     height: 78px;
+}
+
+.title{
+    color: #E7816B;
+    font-family: var(--font);
+    font-weight: var(--h2-font-weight);
+    font-size:  var(--h2-font-size);
+    line-height: var(--h2-line-height);
+}
+
+.addressTitle, .address{
+    color:  #333136;
+    font-family: var(--font);
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+}
+
+.addressTitle{
+    font-weight: 700;
+}
+
+.address{
+    font-weight: var(--body-font-weight);
+}
+
+.map{
+    width: 350px;
+    height: 326px;
+    border-radius: 15px;
+    content: url('./images/image-map-canada.png');
+    transition: width 0.2s linear, height 0.2s linear, border-radius 0.2s linear;
+}
+
+@media(max-width: 1200px){
+    .container{
+        width: 90%;
+    }
+    .content{
+        width: 80%;
+    }
+
+}
+
+@media(max-width: 1000px){
+    .addresses{
+        width: 100%;
+        gap: 30px;
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 800px){
+    .container{
+        flex-direction: column-reverse;
+        height: 683px;
+        margin-bottom: 120px
+    }
+    .addresses{
+        flex-direction: row;
+    }
+    .map{
+        width: 100%;
+        content: url('./images/image-map-canada-tablet.png');
+        height: 326px;
+        object-fit: cover;
+    }
+    .pinkBox{
+        width: 100%;
+        background-image: url('./images/bg-pattern-three-circles.svg')
+    }
+}
+
+@media(max-width: 600px){
+    .addresses{
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+@media(max-width: 500px){
+    .container{
+        width: 100%;
+        gap: 0px;
+        height: 714px;
+        margin-bottom: 40px;
+    }
+    .title{
+        font-size: 32px;
+        line-height: 36px;
+    }
+    .pinkBox{
+        height: 394px;
+        border-radius: 0px;
+        background-position: top left;
+    }
+    .map{
+        border-radius: 0px;
+    }
+
+    .addressTitle, .address{
+        font-size: 15px;
+        line-height: 25px;
+    }
+
+    .content, .addresses{
+        align-items: center;
+    }
+
+    .address{
+        text-align: center;
+    }
 }
