@@ -1,0 +1,22 @@
+#mapOne, #mapTwo, #mapThree{
+    border-radius: 15px;
+    height: 326px;
+    width: 350px;
+    transition: width 0.2s linear, height 0.2s linear, border-radius 0.2s linear;
+}
+
+
+@media(max-width: 800px){
+    #mapOne, #mapTwo, #mapThree{
+        width: 100%;
+        height: 326px;
+        object-fit: cover;
+    }
+}
+
+
+@media(max-width: 500px){
+    #mapOne, #mapTwo, #mapThree{
+        border-radius: 0px;
+    }
+}

@@ -1,0 +1,16 @@
+.container{
+    margin-bottom: 380px;
+    transition: margin 0.2s linear;
+}
+
+@media(max-width: 384px){
+    .container{
+        margin-bottom: 384px;
+    }
+}
+
+@media(max-width: 500px){
+    .container{
+        margin-bottom: 310px;
+    }
+}

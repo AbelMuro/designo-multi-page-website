@@ -1,7 +1,7 @@
 import React, {useCallback} from 'react';
 import AboutUs from './AboutUs';
 import WorldClassTalent from './WorldClassTalent';
-import CompanyLocations from './CompanyLocations';
+import CompanyLocations from './../ReusableComponents/CompanyLocations';
 import TheRealDeal from './TheRealDeal';
 import styles from './styles.module.css';
 import leafBG from './images/bg-pattern-leaf.svg';

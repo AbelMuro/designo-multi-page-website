@@ -1,0 +1,28 @@
+.container{
+    width: 380px;
+    height: 451px;
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+}
+
+.submit{
+    width: 152px;
+    height: 56px;
+    background-color: white;
+    border-radius: 8px;
+    font-family: var(--font);
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 21.68px;
+    letter-spacing: 1px;
+    border: none;
+    align-self: flex-end;
+    transition: background-color 0.2s linear, color 0.2s linear;
+    cursor: pointer;
+}
+
+.submit:hover{
+    background-color: #FFAD9B;
+    color: white;
+}
