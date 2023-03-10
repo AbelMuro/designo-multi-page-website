@@ -1,36 +1,47 @@
-import React, {useRef, useState} from 'react';
+import React, {useRef, useState, useEffect} from 'react';
 import styles from './styles.module.css';
 import images from './images';
 
-function Inputs({type, placeholder, ...rest}) {
+function Inputs({type, placeholder, errorMessage, ...rest}) {
     const [text, setText] = useState('');
     const emptyErrorMessageRef = useRef();
-    const emailErrorMessageRef = useRef();
-    const inputRef = useRef()
+    const otherErrorMessageRef = useRef();
+    const inputRef = useRef();
 
-    const handleFocus = () => {
-        emptyErrorMessageRef.current.style.display = '';
-    }
+    const handleBlur = () => {                                          /* will automatically check if the input is valid once the user 'leaves' the input*/
+        const isEmpty = inputRef.current.validity.valueMissing;
 
-    const handleBlur = () => {
-        const isValid = inputRef.current.checkValidity();
-
-        if(isValid)
-            emptyErrorMessageRef.current.style.display = '';
+        if(isEmpty)
+            emptyErrorMessageRef.current.style.display = 'flex';  
         else
-            emptyErrorMessageRef.current.style.display = 'flex';        
+            emptyErrorMessageRef.current.style.display = '';
     }
 
     const handleInvalid = () => {
-        inputRef.current.setCustomValidity(' ');
-        emptyErrorMessageRef.current.style.display = 'flex';  
+        inputRef.current.setCustomValidity(' ');                            /* removing default message that appears for invalid inputs*/
+        const typeMismatch = inputRef.current.validity.typeMismatch;        
+        const isEmpty = inputRef.current.validity.valueMissing;
+        const isPatternInvalid = inputRef.current.validity.patternMismatch;
+
+        if(typeMismatch || isPatternInvalid)                                /* some inputs will have at least two error messages*/
+            otherErrorMessageRef.current.style.display = 'flex';
+        else if(isEmpty)
+            emptyErrorMessageRef.current.style.display = 'flex';  
+            
     }   
 
     const handleChange = (e) => {
-        setText(e.target.value);
+        setText(e.target.value);           
     }
 
+    useEffect(() => {
+        if(!text) return;
 
+        inputRef.current.setCustomValidity('');
+        emptyErrorMessageRef.current.style.display = '';                    /* error messages, if any, will be removed when the user starts typing*/
+        otherErrorMessageRef.current.style.display = '';     
+
+    }, [text])
 
     return(
             <fieldset className={styles.inputContainer}>
@@ -40,7 +51,6 @@ function Inputs({type, placeholder, ...rest}) {
                     className={styles.input} 
                     type={type} 
                     placeholder={placeholder} 
-                    onFocus={handleFocus} 
                     onBlur={handleBlur} 
                     onInvalid={handleInvalid}
                     ref={inputRef} 
@@ -50,9 +60,9 @@ function Inputs({type, placeholder, ...rest}) {
                 <div className={styles.emptyErrorMessage} ref={emptyErrorMessageRef}>
                     Can't be empty<img src={images['iconError']} className={styles.error}/>
                 </div>            
-                <div className={styles.emailErrorMessage} ref={emailErrorMessageRef}>
-                    Please use a valid email address<img src={images['iconError']} className={styles.error}/>
-                </div>    
+                <div className={styles.emailErrorMessage} ref={otherErrorMessageRef}>
+                    {errorMessage}<img src={images['iconError']} className={styles.error}/>
+                </div>
             </fieldset>
         )
 }

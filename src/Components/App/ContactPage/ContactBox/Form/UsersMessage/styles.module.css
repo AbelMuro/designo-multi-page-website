@@ -1,0 +1,34 @@
+.inputContainer{
+    border: none; 
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 102px;
+}
+
+
+.textField{
+    box-sizing: border-box;
+    background-color: transparent;
+    resize: none;
+    width: 100%;
+    padding-left: 16px;
+    height: 102px;
+    color: white;
+    font-family: var(--font);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 26px;
+    border: none;
+    border-bottom: 1px solid white;
+}
+
+.textField::placeholder{
+    color: white;
+    opacity: 0.5;
+}
+
+.textField:focus{
+    outline: 0px;
+}
+
