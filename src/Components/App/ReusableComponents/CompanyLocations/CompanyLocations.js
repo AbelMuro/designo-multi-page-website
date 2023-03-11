@@ -7,9 +7,9 @@ function CompanyLocations() {
     const navigate = useNavigate();
 
     const handleClick = (e) => {
-        const scroll = e.target.getAttribute('data-scroll');
-        window.scrollTo(0, scroll);
-        navigate('/locations');
+        const location = e.target.getAttribute('data-location');
+        console.log(location);
+        navigate('/locations', {state: location});
     }
 
     return(
@@ -22,7 +22,7 @@ function CompanyLocations() {
                 <h3 className={styles.title}>
                     CANADA
                 </h3>
-                <button className={styles.locationButton} onClick={handleClick} data-scroll={0}>
+                <button className={styles.locationButton} onClick={handleClick} data-location='canada'>
                     SEE LOCATION
                 </button>
             </div>
@@ -34,7 +34,7 @@ function CompanyLocations() {
                 <h3 className={styles.title}>
                     AUSTRALIA
                 </h3>
-                <button className={styles.locationButton} onClick={handleClick} data-scroll={500}>
+                <button className={styles.locationButton} onClick={handleClick} data-location='australia'>
                     SEE LOCATION
                 </button>
             </div>
@@ -46,7 +46,7 @@ function CompanyLocations() {
                 <h3 className={styles.title}>
                     UNITED KINGDOM
                 </h3>
-                <button className={styles.locationButton} onClick={handleClick} data-scroll={600}>
+                <button className={styles.locationButton} onClick={handleClick} data-location='uk'>
                     SEE LOCATION
                 </button>
             </div>

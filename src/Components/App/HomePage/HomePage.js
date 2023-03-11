@@ -16,7 +16,6 @@ function HomePage(){
             ref.style.opacity = tablet ? '0' : '';
     }, [tablet])
 
-
     return(
         <main>
             <div className={styles.containerOne} ref={bgLeafRef}>

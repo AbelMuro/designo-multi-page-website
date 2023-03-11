@@ -1,9 +1,16 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {useLocation} from 'react-router-dom';
 import Location from './Location';
 import styles from './styles.module.css';
-import images from './images';
 
 function LocationsPage() {
+    const {state} = useLocation();
+
+    useEffect(() => {
+        if(state)
+            document.querySelector("#" + state).scrollIntoView({behavior: 'smooth'});
+    }, [state])
+
     return(
         <main className={styles.container}>
             <Location 
@@ -14,11 +21,10 @@ function LocationsPage() {
                 contactInfoLineOne='P : +1 253-863-8967'
                 contactInfoLineTwo='M : contact@designo.co'
                 rowReverse={false}
-                mapDesktop={images['canadaMapDesktop']}
-                mapTablet={images['canadaMapTablet']}
                 lat={43.643579}
                 long={-79.580322}
                 id={'mapOne'}
+                countryName={'canada'}
             />
             <Location 
                 title='Australia' 
@@ -28,11 +34,10 @@ function LocationsPage() {
                 contactInfoLineOne='P : (02) 6720 9092'
                 contactInfoLineTwo='M : contact@designo.au'
                 rowReverse={true}
-                mapDesktop={images['australiaMapDesktop']}
-                mapTablet={images['australiaMapTablet']}
                 lat={-30.3291504}
                 long={149.7884525}
                 id={'mapTwo'}
+                countryName={'australia'}
             />
             <Location 
                 title='United Kingdom' 
@@ -42,11 +47,10 @@ function LocationsPage() {
                 contactInfoLineOne='P : 078 3115 1400'
                 contactInfoLineTwo='M : contact@designo.uk'
                 rowReverse={false}
-                mapDesktop={images['ukMapDesktop']}
-                mapTablet={images['ukMapTablet']}
                 lat={51.7223}
                 long={-3.8501}
                 id={'mapThree'}
+                countryName={'uk'}
             />
         </main>
     )

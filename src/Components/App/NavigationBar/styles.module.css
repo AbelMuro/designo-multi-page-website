@@ -45,18 +45,27 @@
     cursor: pointer;
 }
 
-.mobileMenu{
+.overlay{
+    display: none;
+    opacity: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 96px;
     z-index: var(--closest);
+    transition: opacity 0.2s linear;
+}
+
+.mobileMenu{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: absolute;
     box-sizing: border-box;
     width: 100%;
     height: 0px;      
     padding: 0px; 
     background-color: #1D1C1E;
-    top: 155px;
     transition: height 0.2s linear, padding 0.2s linear;
     overflow: hidden;
 }

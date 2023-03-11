@@ -1,8 +1,8 @@
-import React, {useRef, useState, useEffect} from 'react';
+import React, {useRef, useState, useEffect, forwardRef, useImperativeHandle} from 'react';
 import styles from './styles.module.css';
 import images from './images'
 
-function UsersMessage() {
+const UsersMessage = forwardRef((props, ref) => {
     const errorMessageRef = useRef();
     const textAreaRef = useRef();
     const [text, setText] = useState();
@@ -33,6 +33,13 @@ function UsersMessage() {
     }, [text])
 
 
+    useImperativeHandle(ref, () => ({
+        get state() {
+            return text;
+        }
+    }))
+
+
     return(
         <fieldset className={styles.inputContainer}>
             <textarea 
@@ -53,6 +60,6 @@ function UsersMessage() {
         </fieldset>
 
     )
-}
+})
 
 export default UsersMessage;

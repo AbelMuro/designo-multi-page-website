@@ -1,8 +1,8 @@
-import React, {useRef, useState, useEffect} from 'react';
+import React, {useRef, useState, useEffect, forwardRef, useImperativeHandle} from 'react';
 import styles from './styles.module.css';
 import images from './images';
 
-function Inputs({type, placeholder, errorMessage, ...rest}) {
+const Inputs = forwardRef(({type, placeholder, errorMessage, ...rest}, ref) => {
     const [text, setText] = useState('');
     const emptyErrorMessageRef = useRef();
     const otherErrorMessageRef = useRef();
@@ -38,6 +38,12 @@ function Inputs({type, placeholder, errorMessage, ...rest}) {
         emptyErrorMessageRef.current.style.display = '';                    /* error messages, if any, will be removed when the user starts typing*/
         otherErrorMessageRef.current.style.display = '';     
     }, [text])
+    
+    useImperativeHandle(ref, () => ({
+        get state() {
+            return text;
+        }
+    }))
 
     return(
             <fieldset className={styles.inputContainer}>
@@ -61,6 +67,6 @@ function Inputs({type, placeholder, errorMessage, ...rest}) {
                 </div>
             </fieldset>
         )
-}
+})
 
 export default Inputs;

@@ -3,9 +3,8 @@ import useMediaQuery from './../../ReusableComponents/useMediaQuery';
 import Map from './Map';
 import styles from './styles.module.css';
 
-function Location({title, addressTitle, addressLineOne, addressLineTwo, contactInfoLineOne, contactInfoLineTwo, rowReverse , mapDesktop, mapTablet, lat, long, id}) {
+function Location({title, addressTitle, addressLineOne, addressLineTwo, contactInfoLineOne, contactInfoLineTwo, rowReverse, lat, long, id, countryName}) {
     const [tablet] = useMediaQuery('(max-width: 800px)');
-    const [mobile] = useMediaQuery('(max-width: 500px)');
 
     const containerRef = useCallback((ref) => {
         if(!ref) return;
@@ -17,20 +16,8 @@ function Location({title, addressTitle, addressLineOne, addressLineTwo, contactI
     }, [tablet])
 
 
-    const mapRef = useCallback((ref) => {
-        if(!ref) return;
-
-        if(mobile)
-            ref.src = mapDesktop;
-        else if (tablet)
-            ref.src = mapTablet;
-        else
-            ref.src = mapDesktop
-        
-    }, [tablet, mobile])
-
     return(
-        <section className={styles.container} ref={containerRef}>
+        <section className={styles.container} ref={containerRef} id={countryName}>
 
             <div className={styles.pinkBox}>
 
