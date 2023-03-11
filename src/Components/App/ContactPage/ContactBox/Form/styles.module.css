@@ -4,6 +4,7 @@
     display: flex;
     gap: 25px;
     flex-direction: column;
+    transition: width 0.2s linear;
 }
 
 .submit{
@@ -25,4 +26,16 @@
 .submit:hover{
     background-color: #FFAD9B;
     color: white;
+}
+
+@media(max-width: 1200px){
+    .container{
+        width: 50%;
+    }
+}
+
+@media(max-width: 800px){
+    .container{
+        width: 100%;
+    }
 }

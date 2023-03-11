@@ -5,7 +5,7 @@
     border-radius: 15px;
     background-color: #E7816B;
     margin: 0px auto 160px auto;
-    transition: width 0.2s linear, margin 0.2s linear;
+    transition: width 0.2s linear, margin 0.2s linear, gap 0.2s linear, padding 0.2s linear, height 0.2s linear, border-radius 0.2s linear;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,6 +13,7 @@
     background-image: url('./images/bg-pattern-hero-desktop.svg');
     background-repeat: no-repeat;
     background-position: bottom left;
+    gap: 95px;
 }
 
 .header{
@@ -27,6 +28,7 @@
     font-size: var(--h1-font-size);
     font-weight: var(--h1-font-weight);
     line-height: var(--h1-line-height);
+    transition: font-size 0.2s linear, line-height 0.2s linear;
 }
 
 .desc{
@@ -36,4 +38,55 @@
     font-weight: var(--body-font-weight);
     line-height: var(--body-line-height);
     width: 445px;
+    transition: font-size 0.2s linear, line-height 0.2s linear;
+}
+
+@media(max-width: 1200px){
+    .container{
+        width: 90%;
+        padding: 0px 60px;
+        gap: 45px;
+    }
+    .header{
+        width: 50%;
+    }
+
+    .desc{
+        width: 100%;
+    }
+}
+
+@media(max-width: 800px){
+    .container{
+        flex-direction: column;
+        padding: 71px 58px;
+        height: 711px;
+    }
+
+    .header{
+        width: 100%;
+    }
+}
+
+@media(max-width: 500px){
+    .container{
+        width: 100%;
+        border-radius: 0px;
+        padding: 72px 24px;
+    }
+
+    .header{
+        align-items: center;
+    }
+
+    .title{
+        font-size: 32px;
+        line-height: 32px;
+    }
+
+    .desc{
+        font-size: 15px;
+        line-height: 25px;
+        text-align: center;
+    }
 }

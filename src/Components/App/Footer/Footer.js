@@ -1,21 +1,48 @@
-import React from 'react';
-import {useNavigate} from 'react-router-dom';
+import React, {useEffect, useCallback} from 'react';
+import {useNavigate, useLocation} from 'react-router-dom';
 import useMediaQuery from './../ReusableComponents/useMediaQuery';
 import styles from './styles.module.css';
 import logo from './images/logo-light.png';
 
 function Footer() {
     const [tablet] = useMediaQuery('(max-width: 690px)');
+    const [mobile] = useMediaQuery('(max-width: 500px)')
     const navigate = useNavigate();
+    const currentRoute = useLocation();
+
 
     const handleNavLink = (e) => {
         const route = e.target.getAttribute('data-route');
         navigate(route);
     }
 
+    const orangeBoxRef = useCallback((ref) => {
+        if(!ref)
+            return;
+        else{
+            ref.style.display = currentRoute.pathname == '/contact' ? 'none' : '';
+        }
+            
+    }, [currentRoute.pathname])
+
+    const footerRef = useCallback((ref) => {
+        if(!ref)
+            return;
+        else{
+            ref.style.height = currentRoute.pathname == '/contact' ? '321px' : '';
+            ref.style.padding = currentRoute.pathname == '/contact' ? '72px' : '';
+        }
+
+    }, [currentRoute.pathname])
+
+
+    useEffect(() => {
+            //this is where i left off, i will need to style the height of the footer with media queries
+    })
+
     return(
-        <footer className={styles.container}>
-            <section className={styles.orangeBox}>
+        <footer className={styles.container} ref={footerRef}>
+            <section className={styles.orangeBox} ref={orangeBoxRef}>
                 <div className={styles.flexContainer}>
                     <div className={styles.info}>
                         <h2 className={styles.projectTitle}>

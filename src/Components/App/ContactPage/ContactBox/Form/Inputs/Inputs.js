@@ -26,8 +26,7 @@ function Inputs({type, placeholder, errorMessage, ...rest}) {
         if(typeMismatch || isPatternInvalid)                                /* some inputs will have at least two error messages*/
             otherErrorMessageRef.current.style.display = 'flex';
         else if(isEmpty)
-            emptyErrorMessageRef.current.style.display = 'flex';  
-            
+            emptyErrorMessageRef.current.style.display = 'flex';          
     }   
 
     const handleChange = (e) => {
@@ -35,12 +34,9 @@ function Inputs({type, placeholder, errorMessage, ...rest}) {
     }
 
     useEffect(() => {
-        if(!text) return;
-
         inputRef.current.setCustomValidity('');
         emptyErrorMessageRef.current.style.display = '';                    /* error messages, if any, will be removed when the user starts typing*/
         otherErrorMessageRef.current.style.display = '';     
-
     }, [text])
 
     return(

@@ -4,8 +4,8 @@
     margin: 0px;
     width: 100%;
     height: 102px;
+    position: relative;
 }
-
 
 .textField{
     box-sizing: border-box;
@@ -21,6 +21,11 @@
     line-height: 26px;
     border: none;
     border-bottom: 1px solid white;
+    transition: border 0.2s linear;
+}
+
+.textField:hover{
+    border-bottom: 3px solid white;
 }
 
 .textField::placeholder{
@@ -30,5 +35,30 @@
 
 .textField:focus{
     outline: 0px;
+    border-bottom: 3px solid white;
 }
 
+
+.errorMessage{
+    display: flex;
+    justify-content: space-between;
+    min-width: 104px;
+    gap: 8px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-family: var(--font);
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 26px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.errorIcon{
+    width: 20px;
+    height: 20px;
+}

@@ -23,6 +23,10 @@
     transition: border 0.2s linear;
 }
 
+.input:hover{
+    border-bottom: 3px solid white;
+}
+
 .input:focus{
     outline: none;
     border-bottom: 3px solid white;
@@ -34,7 +38,7 @@
 }
 
 input:-webkit-autofill{
-    -webkit-box-shadow:0 0 0 50px #E7816B inset;
+    box-shadow: 0 0 0 50px #E7816B inset;
     -webkit-text-fill-color: white;
 }
 
