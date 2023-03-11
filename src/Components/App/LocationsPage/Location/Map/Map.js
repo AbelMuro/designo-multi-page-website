@@ -4,6 +4,7 @@ import './styles.css';
 function Map({lat, long, id}) {
     const [map, setMap] = useState();
 
+    /* initializing the map*/
     useEffect(() => {
         setMap(L.map(id, {
             center: [lat, long],
@@ -11,33 +12,31 @@ function Map({lat, long, id}) {
         }));
     },[])
 
+    /*specifying a tile layer, track resize and a marker to the map */
     useEffect(() => {
         if(!map) return;
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 19,
-                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
         map.trackResize = true;
         L.marker([lat, long]).addTo(map);
 
         return () => {
+            map.off();
             map.remove();
         }
     }, [map])
 
+
+    /* this will check to see if the map's size has changed and will update it accordingly*/
     useEffect(() => {
-        const handleResize = () => {
-            map
-        }
+        if(!map) return;
 
-        window.addEventListener('resize', handleResize)
-
-        return () => {
-            window.removeEventListener('resize', handleResize)
-        }
-    }, [])
-
+        setTimeout(() => {
+            map.invalidateSize(true)
+        }, 200)
+    })
 
     return(
             <div id={id}>
