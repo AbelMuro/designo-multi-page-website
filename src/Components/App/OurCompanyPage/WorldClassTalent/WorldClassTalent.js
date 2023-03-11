@@ -5,7 +5,7 @@ import images from './images';
 function WorldClassTalent() {
     return(
         <section className={styles.container}>
-            <img src={images['worldClassTalentImage']} className={styles.image}/>
+            <img src={images['worldClassTalentImage']} className={styles.image} alt='woman looking at photos'/>
             <div className={styles.flex}>
                 <h2 className={styles.title}>
                     World-class talent

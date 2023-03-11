@@ -75,7 +75,7 @@ function Footer() {
 
             <section className={styles.content}>
                 <div className={styles.footerNav}>
-                    <img src={logo} className={styles.companyLogo} onClick={handleNavLink} data-route='/'/>
+                    <img src={logo} className={styles.companyLogo} onClick={handleNavLink} data-route='/' alt='designo logo'/>
                     {tablet ? <hr className={styles.line}/> : <></>}
                     <div className={styles.links}>
                         <a className={styles.link} onClick={handleNavLink} data-route='/ourcompany'>

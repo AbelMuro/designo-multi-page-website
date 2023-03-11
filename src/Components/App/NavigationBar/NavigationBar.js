@@ -90,7 +90,7 @@ function NavigationBar(){
     return(
         <>
             <nav className={styles.navBar}>
-                <img src={images['companyLogo']} className={styles.logo} onClick={handleNavLink} data-route='/'/>
+                <img src={images['companyLogo']} className={styles.logo} onClick={handleNavLink} data-route='/' alt='designo logo'/>
                 <div className={styles.navLinks}>
                     <a className={styles.link} onClick={handleNavLink} data-route='/ourcompany'>
                         OUR COMPANY

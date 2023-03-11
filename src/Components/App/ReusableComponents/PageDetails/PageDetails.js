@@ -8,7 +8,7 @@ function PageDetails({details}) {
             {details.map((detail) => {
                 return(
                     <div className={styles.detailContainer} key={uuid()}>
-                        <img src={detail.image} className={styles.image}/>
+                        <img src={detail.image} className={styles.image} alt={detail.alt}/>
                         <div className={styles.flex}>
                             <h3 className={styles.title}>
                                 {detail.title}

@@ -15,7 +15,6 @@ function GraphicDesignPage() {
         ref.style.display = tablet ? 'none' : '';
     }, [tablet])
 
-
     return(
         <main>
             <div className={styles.container} ref={leafBGRef}>
@@ -28,9 +27,9 @@ function GraphicDesignPage() {
                 bgPosition='center left'
                 />
             <PageDetails details={[
-                {image: images['timBrown'], title: 'TIM BROWN', desc: "A book cover designed for Tim Brown's new release, 'Change'"},
-                {image: images['boxedWater'], title: 'BOXED WATER', desc: 'A simple packaging concept made for Boxed Water'},
-                {image: images['science'], title: 'SCIENCE!', desc: 'A poster made in collaboration with the Federal Art Project'}
+                {image: images['timBrown'], alt:'tim brown', title: 'TIM BROWN', desc: "A book cover designed for Tim Brown's new release, 'Change'"},
+                {image: images['boxedWater'], alt:'boxed water', title: 'BOXED WATER', desc: 'A simple packaging concept made for Boxed Water'},
+                {image: images['science'], alt:'science', title: 'SCIENCE!', desc: 'A poster made in collaboration with the Federal Art Project'}
             ]}/>
             <PageLinks pageLinks={[
                 {bgImage: images['appDesign'], title: 'APP DESIGN', route: '/appdesign'},

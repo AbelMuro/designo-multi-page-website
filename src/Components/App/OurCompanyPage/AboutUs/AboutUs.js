@@ -42,7 +42,7 @@ function AboutUs() {
                     audiences.
                 </p>
             </div>
-            <img className={styles.image}/>                
+            <img className={styles.image} alt='team of people collaborating'/>                
 
         </section>
     )

@@ -30,12 +30,12 @@ function WebDesignPage() {
                 bgPosition='center right'
                 />
             <PageDetails details={[
-                {image: images['express'], title: 'EXPRESS', desc: 'A multi-carrier shipping website for ecommerce businesses' },
-                {image: images['transfer'], title: 'TRANSFER', desc: 'Site for low-cost money transfers and sending money within seconds'},
-                {image: images['photon'], title: 'PHOTON', desc: 'A state-of-the-art music player with high-resolution audio and DSP effects'},
-                {image: images['builder'], title: 'BUILDER', desc: 'Connects users with local contractors based on their location'},
-                {image: images['blogr'], title: 'BLOGR', desc: 'Blogr is a platform for creating an online blog or publication'},
-                {image: images['camp'], title: 'CAMP', desc: 'Get expert training in coding, data, design, and digital marketing'}
+                {image: images['express'], alt:'express', title: 'EXPRESS', desc: 'A multi-carrier shipping website for ecommerce businesses' },
+                {image: images['transfer'], alt:'transfer',title: 'TRANSFER', desc: 'Site for low-cost money transfers and sending money within seconds'},
+                {image: images['photon'], alt:'photon', title: 'PHOTON', desc: 'A state-of-the-art music player with high-resolution audio and DSP effects'},
+                {image: images['builder'], alt:'builder', title: 'BUILDER', desc: 'Connects users with local contractors based on their location'},
+                {image: images['blogr'], alt:'blogger', title: 'BLOGR', desc: 'Blogr is a platform for creating an online blog or publication'},
+                {image: images['camp'], alt:'camp', title: 'CAMP', desc: 'Get expert training in coding, data, design, and digital marketing'}
             ]}/>
             <PageLinks pageLinks={[
                 {bgImage: images['appDesign'], title: 'APP DESIGN', route: '/appdesign'},

@@ -22,7 +22,7 @@ function TheRealDeal() {
                     to take action and drive real results.
                 </p>
             </div>
-            <img className={styles.image}/>
+            <img className={styles.image} alt='person putting up photos on a wall'/>
         </section>
     )
 }

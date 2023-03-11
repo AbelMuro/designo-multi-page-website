@@ -16,7 +16,7 @@ function CompanyLocations() {
             <div className={styles.location}>
                 <div className={styles.imageContainer}>
                     <img src={images['circleImage']} className={styles.circleImage} id={styles.firstCircle}/> 
-                    <img src={images['canada']} className={styles.locationImage}/>
+                    <img src={images['canada']} className={styles.locationImage} alt='canada city'/>
                 </div>
                 <h3 className={styles.title}>
                     CANADA
@@ -28,7 +28,7 @@ function CompanyLocations() {
             <div className={styles.location}>
                 <div className={styles.imageContainer}>
                     <img src={images['circleImage']} className={styles.circleImage}/> 
-                    <img src={images['australia']} className={styles.locationImage}/>
+                    <img src={images['australia']} className={styles.locationImage} alt='australia dome'/>
                 </div>
                 <h3 className={styles.title}>
                     AUSTRALIA
@@ -40,7 +40,7 @@ function CompanyLocations() {
             <div className={styles.location}>
                 <div className={styles.imageContainer}>
                     <img src={images['circleImage']} className={styles.circleImage} id={styles.thirdCircle}/> 
-                    <img src={images['uk']} className={styles.locationImage}/>
+                    <img src={images['uk']} className={styles.locationImage} alt='united kingdom bridge'/>
                 </div>
                 <h3 className={styles.title}>
                     UNITED KINGDOM

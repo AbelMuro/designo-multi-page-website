@@ -10,7 +10,7 @@ function CompanyDetails() {
                     <div>
                         <div className={styles.imageContainer}>
                             <img src={images['circlePattern']} className={styles.circle} id={styles.circleOne}/>
-                            <img src={images['passionate']} className={styles.image}/>                        
+                            <img src={images['passionate']} className={styles.image} alt='man using an ipad'/>                        
                         </div>                        
                     </div>
 
@@ -30,7 +30,7 @@ function CompanyDetails() {
                     <div className={styles.imageFlexItem}>
                         <div className={styles.imageContainer}>
                             <img src={images['circlePattern']} className={styles.circle} id={styles.circleTwo}/>
-                            <img src={images['resourceful']} className={styles.image}/>
+                            <img src={images['resourceful']} className={styles.image} alt='man using an ipad'/>
                         </div>                        
                     </div>
                     <div className={styles.companyDesc}>
@@ -50,7 +50,7 @@ function CompanyDetails() {
                     <div className={styles.imageFlexItem}>
                         <div className={styles.imageContainer}>
                             <img src={images['circlePattern']} className={styles.circle} id={styles.circleThree}/>
-                            <img src={images['friendly']} className={styles.image}/>                        
+                            <img src={images['friendly']} className={styles.image} alt='man and woman brainstorming'/>                        
                         </div>                        
                     </div>
 

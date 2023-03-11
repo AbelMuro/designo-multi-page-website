@@ -20,7 +20,7 @@ function AppDesignPage() {
     return(
         <main>
             <div className={styles.container} ref={leafBgRef}>
-                <img src={images['bgLeaf']} className={styles.leaf}/>
+                <img src={images['bgLeaf']} className={styles.leaf} alt='leaf background'/>
             </div>
             <WebPageHeader 
                 title='App Design' 
@@ -29,14 +29,14 @@ function AppDesignPage() {
                 bgPosition='center left'
                 />
             <PageDetails details={[
-                {image: images['airfilter'], title: 'AIRFILTER', desc: 'Solving the problem of poor indoor air quality by filtering the air'},
-                {image: images['eyecam'], title: 'EYECAM', desc: 'Product that lets you edit your favorite photos and videos at any time'},
-                {image: images['faceit'], title: 'FACEIT', desc: 'Get to meet your favorite internet superstar with the faceit app'},
-                {image: images['todo'], title: 'TODO', desc: 'A todo app that features cloud sync with light and dark mode'},
-                {image: images['loopstudios'], title: 'LOOPSTUDIOS', desc: 'A VR experience app made for Loopstudios'}
+                {image: images['airfilter'], alt: 'air filter', title: 'AIRFILTER', desc: 'Solving the problem of poor indoor air quality by filtering the air'},
+                {image: images['eyecam'], alt: 'eye came', title: 'EYECAM', desc: 'Product that lets you edit your favorite photos and videos at any time'},
+                {image: images['faceit'], alt: 'face it', title: 'FACEIT', desc: 'Get to meet your favorite internet superstar with the faceit app'},
+                {image: images['todo'], alt: 'todo app', title: 'TODO', desc: 'A todo app that features cloud sync with light and dark mode'},
+                {image: images['loopstudios'], alt: 'loop studios', title: 'LOOPSTUDIOS', desc: 'A VR experience app made for Loopstudios'}
             ]}/>
             <PageLinks pageLinks={[
-                {bgImage: images['webDesign'], title: 'WEB DESIGN', route: '/webdesign'},
+                {bgImage: images['webDesign'],title: 'WEB DESIGN', route: '/webdesign'},
                 {bgImage: images['graphicDesign'], title: 'GRAPHIC DESIGN', route: '/graphicdesign'}
             ]}/>
         </main>
