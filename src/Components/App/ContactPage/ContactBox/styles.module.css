@@ -1,7 +1,7 @@
 .container{
     box-sizing: border-box;
     width: 1110px;
-    height: 480px;
+    min-height: 480px;
     border-radius: 15px;
     background-color: #E7816B;
     margin: 0px auto 160px auto;
@@ -60,7 +60,7 @@
     .container{
         flex-direction: column;
         padding: 71px 58px;
-        height: 711px;
+        min-height: 711px;
     }
 
     .header{

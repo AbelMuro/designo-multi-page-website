@@ -39,3 +39,11 @@
         width: 100%;
     }
 }
+
+@media(max-width: 500px){
+    .submit{
+        position: relative;
+        top: 15px;
+        align-self: center;
+    }
+}
