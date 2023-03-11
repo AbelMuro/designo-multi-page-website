@@ -1,13 +1,26 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import WebPageHeader from '../ReusableComponents/WebPageHeader';
 import PageDetails from './../ReusableComponents/PageDetails';
 import PageLinks from './../ReusableComponents/PageLinks'
+import useMediaQuery from './../ReusableComponents/useMediaQuery';
 import images from './images';
 import styles from './styles.module.css';
 
 function GraphicDesignPage() {
+    const [tablet] = useMediaQuery('(max-width: 800px)');
+
+    const leafBGRef = useCallback((ref) => {
+        if(!ref) return;
+
+        ref.style.display = tablet ? 'none' : '';
+    }, [tablet])
+
+
     return(
         <main>
+            <div className={styles.container} ref={leafBGRef}>
+                <img src={images['leafBG']} className={styles.leaf}/>
+            </div>
             <WebPageHeader 
                 title='GRAPHIC DESIGN' 
                 desc='We deliver eye-catching branding materials that are tailored to meet your business objectives.'

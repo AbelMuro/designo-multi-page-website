@@ -8,7 +8,6 @@ function CompanyLocations() {
 
     const handleClick = (e) => {
         const location = e.target.getAttribute('data-location');
-        console.log(location);
         navigate('/locations', {state: location});
     }
 

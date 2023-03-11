@@ -1,0 +1,15 @@
+.container{
+    width: 1440px;
+    position: absolute;
+    top: 281px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow: hidden;
+}
+
+@media(max-width: 1440px){
+    .container{
+        width: 100%;
+    }
+}

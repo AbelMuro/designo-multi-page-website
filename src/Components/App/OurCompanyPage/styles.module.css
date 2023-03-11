@@ -5,6 +5,7 @@
     right: 0;
     margin: auto;
     z-index: var(--farthest);
+    overflow: hidden;
 }
 
 .leafContainerOne{
