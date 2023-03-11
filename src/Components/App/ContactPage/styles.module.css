@@ -1,0 +1,28 @@
+.container{
+    width: 1440px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: -161px;
+    z-index: var(--farthest);
+}
+
+.leaf{
+    position: absolute;
+    right: 0px;
+    width: 1006px;
+    height: 594px;
+}
+
+@media(max-width: 1440px){
+    .container{
+        width: 100%;
+    }
+}
+
+@media(max-width: 800px){
+    .container{
+        display: none;
+    }
+}

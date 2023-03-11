@@ -1,9 +1,11 @@
-import React, {useEffect, useCallback} from 'react';
+import React, {useCallback} from 'react';
 import {useNavigate, useLocation} from 'react-router-dom';
 import useMediaQuery from './../ReusableComponents/useMediaQuery';
 import styles from './styles.module.css';
 import logo from './images/logo-light.png';
 
+
+//note to my future self: this component will look different in the '/contact' page
 function Footer() {
     const [tablet] = useMediaQuery('(max-width: 690px)');
     const [mobile] = useMediaQuery('(max-width: 500px)')
@@ -13,9 +15,16 @@ function Footer() {
 
     const handleNavLink = (e) => {
         const route = e.target.getAttribute('data-route');
+        window.scrollTo(0,0);
         navigate(route);
     }
 
+    const handleButtonClick = () => {
+        window.scrollTo(0,0);
+        navigate('/contact')
+    }
+
+    /* this callback will remove the orange box of the footer nav only when the user navigates to the '/contact' page*/
     const orangeBoxRef = useCallback((ref) => {
         if(!ref)
             return;
@@ -25,20 +34,24 @@ function Footer() {
             
     }, [currentRoute.pathname])
 
+    /* this callback will resize the height differently only when the user navigates to the './contact' page*/
     const footerRef = useCallback((ref) => {
-        if(!ref)
-            return;
+        if(!ref) return;
+        
+        if(mobile){
+            ref.style.height = currentRoute.pathname == '/contact' ? '626px' : '';
+            ref.style.padding = currentRoute.pathname == '/contact' ? '64px 0px' : '';
+        }
+        else if(tablet){
+            ref.style.height = currentRoute.pathname == '/contact' ? '337px' : '';
+            ref.style.padding = currentRoute.pathname == '/contact' ? '80px 0px' : '';
+        }
         else{
             ref.style.height = currentRoute.pathname == '/contact' ? '321px' : '';
-            ref.style.padding = currentRoute.pathname == '/contact' ? '72px' : '';
+            ref.style.padding = currentRoute.pathname == '/contact' ? '72px 0px' : '';
         }
 
     }, [currentRoute.pathname])
-
-
-    useEffect(() => {
-            //this is where i left off, i will need to style the height of the footer with media queries
-    })
 
     return(
         <footer className={styles.container} ref={footerRef}>
@@ -54,7 +67,7 @@ function Footer() {
                             expertise can help your business grow.
                         </p>
                     </div>
-                    <button className={styles.getInTouchButton}>
+                    <button className={styles.getInTouchButton} onClick={handleButtonClick}>
                         GET IN TOUCH
                     </button>
                 </div>
@@ -62,7 +75,7 @@ function Footer() {
 
             <section className={styles.content}>
                 <div className={styles.footerNav}>
-                    <img src={logo} className={styles.companyLogo}/>
+                    <img src={logo} className={styles.companyLogo} onClick={handleNavLink} data-route='/'/>
                     {tablet ? <hr className={styles.line}/> : <></>}
                     <div className={styles.links}>
                         <a className={styles.link} onClick={handleNavLink} data-route='/ourcompany'>

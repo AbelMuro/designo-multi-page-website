@@ -5,7 +5,7 @@
     border-radius: 15px;
     background-color: #E7816B;
     margin: 0px auto 160px auto;
-    transition: width 0.2s linear, margin 0.2s linear, gap 0.2s linear, padding 0.2s linear, height 0.2s linear, border-radius 0.2s linear;
+    transition: all 0.2s linear;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -73,6 +73,8 @@
         width: 100%;
         border-radius: 0px;
         padding: 72px 24px;
+        background-image: url('./images/bg-pattern-hero-contact-mobile.svg');
+        background-position: -65px top;
     }
 
     .header{

@@ -52,7 +52,7 @@ function NavigationBar(){
     return(
         <>
             <nav className={styles.navBar}>
-                <img src={images['companyLogo']} className={styles.logo}/>
+                <img src={images['companyLogo']} className={styles.logo} onClick={handleNavLink} data-route='/'/>
                 <div className={styles.navLinks} ref={navLinksRef}>
                     <a className={styles.link} onClick={handleNavLink} data-route='/ourcompany'>
                         OUR COMPANY

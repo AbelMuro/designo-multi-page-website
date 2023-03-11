@@ -11,6 +11,7 @@
 .logo{
     width: 202px;
     height: 27px;
+    cursor: pointer;
 }
 
 .navLinks{
