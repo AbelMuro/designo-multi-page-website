@@ -9,7 +9,7 @@ function Map({lat, long, id}) {
             center: [lat, long],
             zoom: 13
         }));
-    }, [])
+    },[])
 
     useEffect(() => {
         if(!map) return;
@@ -18,13 +18,25 @@ function Map({lat, long, id}) {
                 maxZoom: 19,
                 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
-
+        map.trackResize = true;
         L.marker([lat, long]).addTo(map);
 
         return () => {
             map.remove();
         }
     }, [map])
+
+    useEffect(() => {
+        const handleResize = () => {
+            map
+        }
+
+        window.addEventListener('resize', handleResize)
+
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+    }, [])
 
 
     return(
