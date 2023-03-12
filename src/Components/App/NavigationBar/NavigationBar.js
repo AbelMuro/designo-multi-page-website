@@ -14,6 +14,7 @@ function NavigationBar(){
     }
 
     const handleNavLink = (e) => {
+        setShowMobileMenu(false);
         const route = e.target.getAttribute('data-route');
         navigate(route);
     }

@@ -3,6 +3,8 @@
     height: 326px;
     width: 350px;
     transition: width 0.2s linear, height 0.2s linear, border-radius 0.2s linear;
+    position: relative;
+    z-index: var(--far);
 }
 
 
