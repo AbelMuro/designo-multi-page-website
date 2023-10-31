@@ -23,7 +23,9 @@ function Form() {
             <Inputs type='email' placeholder='Email Address' errorMessage='Please use a valid email address' ref={email}/>
             <Inputs type='tel' placeholder='Phone' errorMessage='Please use a valid phone #' pattern='([0-9]{3}[0-9]{3}[0-9]{4})|([0-9]{1}[0-9]{3}[0-9]{3}[0-9]{4})|(\+[0-9]{1}[0-9]{3}[0-9]{3}[0-9]{4})' ref={tel}/>
             <UsersMessage ref={message}/>
-            <input type='submit' className={styles.submit}/>
+            <button className={styles.submit}>
+                Submit   
+             </button>
         </form>
     )
 }
