@@ -23,6 +23,8 @@
     transition: border 0.2s linear;
     -webkit-appearance: none;
     appearance: none;
+    -webkit-border-radius:0; 
+    border-radius:0;
 }
 
 .input:hover{
