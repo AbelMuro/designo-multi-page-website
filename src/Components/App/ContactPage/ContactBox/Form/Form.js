@@ -12,10 +12,6 @@ function Form() {
     const message = useRef();
 
     const handleSubmit = () => {
-        console.log(name.current.state)
-        console.log(email.current.state)
-        console.log(tel.current.state)
-        console.log(message.current.state)
         alert('Form has been submitted');
         navigate('/');
 

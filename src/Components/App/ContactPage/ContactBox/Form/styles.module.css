@@ -10,6 +10,7 @@
 .submit{
     width: 152px;
     height: 56px;
+    color: #333136;
     background-color: white;
     border-radius: 8px;
     font-family: var(--font);
