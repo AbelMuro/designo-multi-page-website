@@ -22,6 +22,7 @@
     border: none;
     border-bottom: 1px solid white;
     transition: border 0.2s linear;
+    border-radius: 0px;
 }
 
 .textField:hover{
