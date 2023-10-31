@@ -21,7 +21,6 @@
     padding: 0px 0px 11px 16px;
     color: white;
     transition: border 0.2s linear;
-    border-radius: 0px;
 }
 
 .input:hover{
